@@ -151,13 +151,15 @@ private:
 			for(auto waypointString : waypointsList) {
 				double heading = 0;
 
-				line++;				
+				line++;	
+
+				// if (controller_plan_.size() > 7 ){
+				// 		break;
+				// }			
 
 				if( line % skip != 0 ){
 
-					// if(controller_plan_.size() > 7 ){
-					// 	break;
-					// }	
+						
 					continue;
 				}
 				cerr<< waypointString<<endl;

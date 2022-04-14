@@ -16,7 +16,7 @@
 		
     	<rosparam param="waypoints" command="load" file="$(find cogniteam-test-local-planner)/waypoints/$(arg waypoints_file_name)"  />
 
-      <rosparam file="$(find cogniteam-test-local-planner)/waypoints/param/base_local_planner_params.yaml" command="load" />    
+      <rosparam file="$(find cogniteam-test-local-planner)/param/base_local_planner_params.yaml" command="load" />    
 
 
 	</node>    
