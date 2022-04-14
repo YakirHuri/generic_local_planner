@@ -1,0 +1,146 @@
+{
+  "name": "yakirhuri21@gmail.com/cogniteam-local-planner",
+  "type": "COMPONENT_TYPE_COMPONENT",
+  "className": "Ros1Component",
+  "instanceName": "",
+  "description": "Intel Realsense D435 driver\nLicense: Apache 2.0",
+  "version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 6,
+    "build": ""
+  },
+  "start": "START_MODE_AUTO",
+  "environment": {
+    "name": "",
+    "ipAddress": "",
+    "state": "ENVIRONMENT_STATE_UNLOADED",
+    "message": "",
+    "progress": 0,
+    "requiredDevices": [],
+    "ports": [],
+    "hostIpAddress": "",
+    "variables": [],
+    "rosLocalInfo": {
+      "packageName": "cogniteam-test-local-planner",
+      "launchFile": "cogniteam_test_local_planner.launch",
+      "rosVersion": "",
+      "dependencies": [],
+      "workspaceSetup": "/home/yakir/local_planner_ws/devel/setup.bash",
+      "required": true,
+      "arguments": {}
+    },
+    "log": "",
+    "convertedCommands": "",
+    "onExit": "IGNORE"
+  },
+  "parameters": {
+    "parameters": []
+  },
+  "state": "COMPONENT_STATE_UNLOADED",
+  "message": "",
+  "streams": {
+    "inputStreams": [
+      {
+        "name": "odom",
+        "type": "Nimbus.Core.Messages.Ros1.Messages.nav_msgs.Odometry",
+        "description": "The frame attached to the odometry system.",
+        "streamMode": "STREAM_MODE_TOPIC",
+        "rosTf": {
+          "baseFrame": "odom",
+          "childFrame": "base_link",
+          "rate": 10,
+          "qosProfile": ""
+        },
+        "latched": false,
+        "maxRate": 0,
+        "expectedRate": 0
+      },
+      {
+        "name": "scan",
+        "type": "",
+        "description": "Laser scans to create the map from",
+        "streamMode": "STREAM_MODE_TOPIC",
+        "rosTopic": {
+          "topic": "base_scan",
+          "type": "Messages.sensor_msgs.LaserScan",
+          "qosProfile": ""
+        },
+        "latched": false,
+        "maxRate": 0,
+        "expectedRate": 0
+      }
+    ],
+    "outputStreams": [
+      {
+        "name": "cmd_vel",
+        "type": "",
+        "description": "A stream of velocity commands meant for execution by a mobile base.",
+        "streamMode": "STREAM_MODE_TOPIC",
+        "rosTopic": {
+          "topic": "/cmd_vel",
+          "type": "Messages.geometry_msgs.Twist",
+          "qosProfile": ""
+        },
+        "latched": false,
+        "maxRate": 0,
+        "expectedRate": 0
+      },
+      {
+        "name": "ackerman_cmd_vel",
+        "type": "",
+        "description": "",
+        "streamMode": "STREAM_MODE_TOPIC",
+        "rosTopic": {
+          "topic": "/ackerman_cmd_vel",
+          "type": "Messages.ackermann_msgs.AckermannDriveStamped",
+          "qosProfile": ""
+        },
+        "latched": false,
+        "maxRate": 0,
+        "expectedRate": 0
+      },
+      {
+        "name": "robot_pose",
+        "type": "Messages.geometry_msgs.Pose",
+        "description": "TF map to baselink as odometry",
+        "ros_tf": {
+          "base_frame": "map",
+          "child_frame": "base_link",
+          "rate": 10.0
+        }
+      },
+      {
+        "name": "map",
+        "description": "Get the map data from this topic, which is latched, and updated periodically.",
+        "ros_topic": {
+          "topic": "/map",
+          "type": "Messages.nav_msgs.OccupancyGrid"
+        }
+      },
+      {
+        "name": "polygon_path",
+        "type": "",
+        "ros_topic": {
+          "topic": "/polygon_path",
+          "type": "Messages.nav_msgs.Path"
+        }
+      } 
+    ]
+  },
+  "requiredDevices": [],
+  "ros": {
+    "baseFrame": "base_link",
+    "rate": 10,
+    "publishTfDevices": true,
+    "rosMasterUri": "",
+    "rosIp": "",
+    "autoDetectIp": false
+  },
+  "tags": {},
+  "category": "Algorithms/Navigation",
+  "simulation": false,
+  "pluginFile": "",
+  "license": "",
+  "id": "d319c7d5-f205-45ec-a64f-e294bc557381"
+}

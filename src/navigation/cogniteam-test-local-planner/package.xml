@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package>
+  <name>cogniteam-test-local-planner</name>
+  <version>1.0.0</version>
+  <description>The cogniteam-test-local-planner package</description>
+  <maintainer email="yakir@cogniteam.com">Igor Makhtes</maintainer>
+  <license>BSD</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>nav_msgs</build_depend>
+  <build_depend>actionlib</build_depend>
+  <build_depend>tf</build_depend>
+  <build_depend>kobuki_msgs</build_depend>
+
+  <run_depend>actionlib</run_depend>
+  <run_depend>tf</run_depend>
+  <run_depend>nav_msgs</run_depend>
+  <run_depend>kobuki_msgs</run_depend>
+
+
+</package>
